@@ -89,8 +89,7 @@ export class CheckoutCardController {
     @Headers('stripe-signature') sig,
     @Req() request: RawBodyRequest<Request>,
   ) {
-    const endpointSecret =
-      'whsec_db59966519a65529ae568ade70303bf419be37a47f3777c18a8a4f1c79c8a07a';
+    const endpointSecret = process.env.endpointSecret;
 
     const payload = request.rawBody;
 
